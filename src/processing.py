@@ -3,10 +3,17 @@ def filter_by_state(list_dictionary: list, state_key: str = 'EXECUTED') -> list:
                        у которых ключ state соответствует указанному значению."""
 
     new_dictionary = []
-    for dictionary in list_dictionary:
-        if dictionary['state'] == state_key:
-            new_dictionary.append(dictionary)
-    return new_dictionary
+    if state_key != '':
+        for dictionary in list_dictionary:
+            if dictionary['state'] == state_key:
+                new_dictionary.append(dictionary)
+        if new_dictionary == []:
+            return 'Отсутствуют записи с данным статусом'
+        else:
+            return new_dictionary
+    else:
+        return 'Некоректный статус'
+
 
 
 def sort_by_date(list_dictionary: list, sort_revers: bool = True) -> list:
