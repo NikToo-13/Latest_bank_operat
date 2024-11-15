@@ -2,8 +2,7 @@ from src.widget import mask_account_card, get_date
 
 import pytest
 
-#Тест проверки функций mask_account_card, get_date модуля widget.py при условии:
-# что входящий параметр не может быть не числовым(начальное условие задания)
+#Тест проверки функций mask_account_card, get_date модуля widget.py
 
 @pytest.mark.parametrize('value, expected', [
     ('Maestro 1596837868705199', 'Maestro 1596 83** **** 5199'),
