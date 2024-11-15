@@ -3,7 +3,7 @@ from src.masks import get_mask_card_number, get_mask_account
 import pytest
 
 
-#Тест проверки функций get_mask_card_number и get_mask_account модулz masks.py при условии:
+#Тест проверки функций get_mask_card_number и get_mask_account модуля masks.py при условии:
 # что входящий параметр не может быть не числовым(начальное условие задания)
 
 @pytest.mark.parametrize('value, expected', [
