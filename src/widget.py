@@ -23,12 +23,16 @@ def mask_account_card(account_card: str) -> str:
 def get_date(date_line: str) -> str:
     """Возвращает из строки дату в формате: День.Месяц.Год"""
 
-    if len(date_line) == 26:
-        if date_line.find("T") == 10:
-            if date_line[4] == "-" and date_line[7] == "-":
-                date_e = date_line[0 : date_line.find("T")]
-                date_es = date_e.split("-")
-                if date_es[2].isdigit() and date_es[1].isdigit() and date_es[0].isdigit():
-                    dates = date_es[2] + "." + date_es[1] + "." + date_es[0]
-                    return dates
-    return 'Проверти, правильность ввода данных!'
+    try:
+        if len(date_line) == 26:
+            if date_line.find("T") == 10:
+                if date_line[4] == "-" and date_line[7] == "-":
+                    date_e = date_line[0 : date_line.find("T")]
+                    date_es = date_e.split("-")
+                    if 0 < int(date_es[2]) < 32 and 0 < int(date_es[1]) < 13:
+                        if date_es[2].isdigit() and date_es[1].isdigit() and date_es[0].isdigit():
+                            dates = date_es[2] + "." + date_es[1] + "." + date_es[0]
+                            return dates
+        return 'Проверти, правильность ввода данных!'
+    except Exception:
+        return 'Проверти, правильность ввода данных!'
