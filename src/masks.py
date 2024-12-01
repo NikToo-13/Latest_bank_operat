@@ -1,6 +1,6 @@
 def get_mask_card_number(card_number: int) -> str:
     """Функция принимает на вход номер карты и возвращает ее маску.
-                                   В случаи ошибки возвращает ошибку"""
+    В случаи ошибки возвращает ошибку"""
 
     card_number1 = str(card_number)
     if len(card_number1) == 16:
@@ -12,7 +12,7 @@ def get_mask_card_number(card_number: int) -> str:
 
 def get_mask_account(account: int) -> str:
     """Функция принимает на вход номер счета и возвращает его маску.
-                                    В случаи ошибки возвращает ошибку"""
+    В случаи ошибки возвращает ошибку"""
 
     account1 = str(account)
     if len(account1) == 20:
