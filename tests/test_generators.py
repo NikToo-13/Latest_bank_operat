@@ -219,7 +219,7 @@ def test_card_number_generator1(value, expected):
         result = list(card_number_generator(1, value))
         assert result == expected
     except StopIteration:
-        print()
+        print("StopIteration")
 
 
 def test_card_number_generator2():
