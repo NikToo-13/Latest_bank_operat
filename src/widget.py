@@ -3,7 +3,7 @@ from src.masks import get_mask_account, get_mask_card_number
 
 def mask_account_card(account_card: str) -> str:
     """Возвращать строку с замаскированным номером.
-          Для карт и счетов используйте разные типы маскировки."""
+    Для карт и счетов используйте разные типы маскировки."""
 
     card_attributes = account_card.split()
     if len(card_attributes) != 0:
@@ -33,6 +33,6 @@ def get_date(date_line: str) -> str:
                         if date_es[2].isdigit() and date_es[1].isdigit() and date_es[0].isdigit():
                             dates = date_es[2] + "." + date_es[1] + "." + date_es[0]
                             return dates
-        return 'Проверти, правильность ввода данных!'
+        return "Проверти, правильность ввода данных!"
     except Exception:
-        return 'Проверти, правильность ввода данных!'
+        return "Проверти, правильность ввода данных!"
