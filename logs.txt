@@ -1,0 +1,24 @@
+2024-12-07 22:38:12.607228--> Function: <function my_func at 0x00000214201849A0> started OK!; result: (20.0)
+2024-12-07 22:38:34.988268--> Function: <function my_func at 0x0000026123BFD6C0> started OK!; result: (20.0)
+2024-12-07 22:39:05.401264--> Function: <function my_func at 0x000002449296D6C0> started-> ERROR!: division by zero 
+ при входных данных: (100, 0), {}
+2024-12-07 22:49:04.796365--> Function: <function my_func at 0x000001B321EA49A0> started-> ERROR!: division by zero 
+ при входных данных: (100, 0), {}
+2024-12-07 22:52:15.094383--> Function: <function my_func at 0x000001A4B68549A0> started-> ERROR!: division by zero 
+при входных данных: (100, 0), {}
+2024-12-07 23:00:26.156551--> Function: <function my_func at 0x000001C98D7449A0> started-> ERROR!: division by zero 
+ при входных данных: (100, 0), {}
+2024-12-07 23:10:29.223746--> Function: <function my_func at 0x0000014D8ADCCC20> started-> ERROR!: division by zero 
+ при входных данных: (100, 0), {}
+2024-12-07 23:14:22.258018--> Function: <function my_func at 0x00000276C64958A0> started-> ERROR!: division by zero 
+ при входных данных: (100, 0), {}
+2024-12-07 23:14:51.974586--> Function: <function my_func at 0x000002A9797358A0> started-> ERROR!: division by zero 
+ при входных данных: (100, 0), {}
+2024-12-07 23:17:39.979856--> Function: <function my_func at 0x0000015866CE58A0> started-> ERROR!: division by zero 
+ при входных данных: (100, 0), {}
+2024-12-07 23:17:58.003693--> Function: <function my_func at 0x000002D770DB5120> started OK!; result: (20.0)
+2024-12-07 23:25:37.635368--> Function: <function my_func at 0x000001D1C14658A0> started OK!; result: (20.0)
+2024-12-07 23:26:14.904978--> Function: <function my_func at 0x0000011372DF5120> started OK!; result: (20.0)
+2024-12-07 23:27:04.311879--> Function: <function my_func at 0x0000028F24AB58A0> started OK!; result: (20.0)
+2024-12-07 23:32:11.756295--> Function: <function my_func at 0x000001811D9158A0> started OK!; result: (105)
+2024-12-07 23:32:11.756909--> Function: <function my_function at 0x000001811D4D3C40> started OK!; result: (1.2857142857142858)
