@@ -50,5 +50,5 @@ def card_number_generator(start: int = 1, stop: int = 10) -> Generator:
             num_card += 1
             if num_card > stop:
                 raise Exception("Заданный диапазон исчерпан!")
-    except Exception:
-        return
+    except Exception as er:
+        return er

@@ -3,11 +3,14 @@ def get_mask_card_number(card_number: int) -> str:
     В случаи ошибки возвращает ошибку"""
 
     card_number1 = str(card_number)
-    if len(card_number1) == 16:
-        card_mask = card_number1[0:4] + " " + card_number1[4:6] + "** **** " + card_number1[12:16]
-    else:
-        card_mask = "Проверти, правильность ввода номера карты!"
-    return card_mask
+    try:
+        if len(card_number1) == 16:
+            card_mask = card_number1[0:4] + " " + card_number1[4:6] + "** **** " + card_number1[12:16]
+        else:
+            raise Exception("Проверти, правильность ввода номера карты!")
+        return card_mask
+    except Exception as er:
+        return er
 
 
 def get_mask_account(account: int) -> str:
