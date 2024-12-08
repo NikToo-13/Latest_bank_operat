@@ -139,6 +139,7 @@ def test_filter_by_currency2(fix_transactions):
     except StopIteration:
         print("StopIteration")
 
+
 # Пустой список словарей
 def test_filter_by_currency3(fix_transactions):
     try:
@@ -163,6 +164,7 @@ def test_transaction_descriptions(fix_transactions):
     except StopIteration:
         print("StopIteration")
 
+
 # Пустой список словарей
 def test_transaction_descriptions1():
     try:
@@ -170,6 +172,7 @@ def test_transaction_descriptions1():
         assert next(generator) == "Список словарей закончился"
     except StopIteration:
         print("StopIteration")
+
 
 # Параметаризация
 @pytest.mark.parametrize(

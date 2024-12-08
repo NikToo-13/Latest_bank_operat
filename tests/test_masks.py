@@ -28,7 +28,7 @@ def test_get_mask_card_number(value, expected):
     try:
         assert get_mask_card_number(value) == expected
     except:
-        print('ERROR')
+        print("ERROR")
 
 
 # get_mask_account проверка функции
