@@ -3,7 +3,7 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-keys = os.getenv('API_KEY')
+keys = os.getenv("API_KEY")
 
 
 def operation_converter(transaction: list) -> float:
@@ -12,17 +12,17 @@ def operation_converter(transaction: list) -> float:
     try:
         payload = {}
         headers = {"apikey": keys}
-        transaction_currency = transaction['currency']['code']
-        if transaction_currency != 'RUB':
-            to = 'RUB'
+        transaction_currency = transaction["currency"]["code"]
+        if transaction_currency != "RUB":
+            to = "RUB"
             froms = transaction_currency
             amount = transaction["amount"]
             url = f"https://api.apilayer.com/exchangerates_data/convert?to={to}&from={froms}&amount={amount}"
-            response = requests.request("GET", url, headers=headers, data = payload)
+            response = requests.request("GET", url, headers=headers, data=payload)
             status_code = response.status_code
-            summ = float(response.json()['result'])
+            summ = float(response.json()["result"])
             if status_code == 200:
-                summ = float(response.json()['result'])
+                summ = float(response.json()["result"])
             else:
                 print(status_code)
                 print(response.reason)
