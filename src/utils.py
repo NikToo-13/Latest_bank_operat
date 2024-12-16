@@ -6,7 +6,7 @@ def json_to_dictionary(path_file: str) -> dict:
         и возвращает список словарей с данными о финансовых транзакциях."""
     try:
         with open(path_file, "r", encoding='utf-8') as file:
-            date_files = json.load(file)
-        return date_files
+            date_file = json.load(file)
+        return date_file
     except Exception:
         return []
