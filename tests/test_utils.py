@@ -16,7 +16,6 @@ PATH_HOMES=os.path.join(PATH_HOME, 'data', 'operations.json')
 
 # json_to_dictionary проверка функции
 # фикстура
-
 def test_json_to_dictionary(fix_json_to_dictionary):
     assert str(type(json_to_dictionary(fix_json_to_dictionary))) == "<class 'list'>"
 
