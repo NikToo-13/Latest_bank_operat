@@ -23,6 +23,7 @@ def test_json_to_dictionary(fix_json_to_dictionary):
 def test_json_to_dictionary1(fix_json_to_dictionary1):
     assert json_to_dictionary(fix_json_to_dictionary1) == []
 
+
 #тест для новых функции, используя Mock и patch.
 # Тест на корректный файл с транзакциями
 @patch("builtins.open", new_callable=mock_open, read_data='[{"amount": 100, "currency": "USD"}]')
