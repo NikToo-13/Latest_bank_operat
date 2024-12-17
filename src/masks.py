@@ -10,7 +10,7 @@ def get_mask_card_number(card_number: int) -> str:
             raise Exception("Проверти, правильность ввода номера карты!")
         return card_mask
     except Exception as er:
-        return er
+        return str(er)
 
 
 def get_mask_account(account: int) -> str:

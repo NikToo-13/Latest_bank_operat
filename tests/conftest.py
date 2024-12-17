@@ -1,4 +1,8 @@
+import os
+
 import pytest
+
+from project_sys import PATH_HOME
 
 
 # Фикстуры для test_masks.py
@@ -120,3 +124,12 @@ def fix_transactions():
             "to": "Счет 14211924144426031657",
         },
     ]
+# Общая работа (когда верное значение на выходе)
+@pytest.fixture
+def fix_json_to_dictionary():
+    return os.path.join(PATH_HOME, 'data', 'operations.json')
+
+# Фикстуры для test_utils.py неверный путь
+@pytest.fixture
+def fix_json_to_dictionary1():
+    return os.path.join(PATH_HOME, 'data', 'operations_0.json')

@@ -26,3 +26,10 @@
 --> Function: test_decorators_log.<locals>.division_numbers started OK!; result: (2.0)
 --> Function: test_decorators_log1.<locals>.division_numbers started-> ERROR!: division by zero  при входных данных: (10, 0), {}
 --> Function: test_decorators_log2.<locals>.division_numbers started-> ERROR!: test_decorators_log2.<locals>.division_numbers() missing 2 required positional arguments: 'a' and 'b'  при входных данных: (), {}
+--> Function: my_function started-> ERROR!: division by zero  при входных данных: (12, 0), {}
+--> Function: test_decorators_log.<locals>.division_numbers started OK!; result: (2.0)
+--> Function: test_decorators_log1.<locals>.division_numbers started-> ERROR!: division by zero  при входных данных: (10, 0), {}
+--> Function: test_decorators_log2.<locals>.division_numbers started-> ERROR!: test_decorators_log2.<locals>.division_numbers() missing 2 required positional arguments: 'a' and 'b'  при входных данных: (), {}
+--> Function: test_decorators_log.<locals>.division_numbers started OK!; result: (2.0)
+--> Function: test_decorators_log1.<locals>.division_numbers started-> ERROR!: division by zero  при входных данных: (10, 0), {}
+--> Function: test_decorators_log2.<locals>.division_numbers started-> ERROR!: test_decorators_log2.<locals>.division_numbers() missing 2 required positional arguments: 'a' and 'b'  при входных данных: (), {}
