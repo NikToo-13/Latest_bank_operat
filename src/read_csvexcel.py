@@ -28,3 +28,19 @@ def read_csv(path_file: str) -> dict:
     except Exception as er:
         logger.error(f"Ошибка: {er}")
         return []
+
+
+def read_excel(path_file: str) -> dict:
+    """которая принимает на вход путь до Excel-файла
+        и возвращает список словарей с данными о финансовых транзакциях."""
+    try:
+        list_transaction = []
+        logger.info(f"Принимаем путь к файлу: {path_file}")
+        date_file = pd.read_excel(path_file, index_col=0)
+        logger.info(f"Читаем файл: {path_file}")
+        for row in date_file:
+            list_transaction.append(row)
+        return list_transaction
+    except Exception as er:
+        logger.error(f"Ошибка: {er}")
+        return []

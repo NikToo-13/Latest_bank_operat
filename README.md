@@ -310,6 +310,57 @@ print(summ)
 ```
 *Результат* ->  3007829.379214
 
+## Модуль: read_csvexcel
+
+### Функция read_csv(path: str) -> dict
+Функция принимает на вход путь до csv-файла и возвращает список словарей 
+с данными о финансовых транзакциях. В случии ошибки возвращает пустой словарь
+Ведет запись в лог файл: read_csvexcel.log (в дириктории logs)
+
+*пример*
+```shell
+print(read_csv('C:data\transactions.csv'))
+```
+
+*Результат* ->
+[
+ {'id': '650703', 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 
+'amount': '16210', 'currency_name': 'Sol', 'currency_code': 'PEN', 
+'from': 'Счет 58803664561298323391', 'to': 'Счет 39745660563456619397', 
+'description': 'Перевод организации'}
+...
+...
+...
+{'id': '4699552', 'state': 'EXECUTED', 'date': '2022-03-23T08:29:37Z', 
+'amount': '23423', 'currency_name': 'Peso', 'currency_code': 'PHP', 
+'from': 'Discover 7269000803370165', 'to': 'American Express 1963030970727681', 
+'description': 'Перевод с карты на карту'}]
+
+
+### Функция read_excel(path: str) -> dict
+Функция принимает на вход путь до Excel-файла и возвращает список словарей 
+с данными о финансовых транзакциях. В случии ошибки возвращает пустой словарь
+Ведет запись в лог файл: read_csvexcel.log (в дириктории logs)
+
+*пример*
+```shell
+print(read_excel('C:data\transactions_excel.xlsx'))
+```
+
+*Результат* ->
+[
+ {'id': '650703', 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 
+'amount': '16210', 'currency_name': 'Sol', 'currency_code': 'PEN', 
+'from': 'Счет 58803664561298323391', 'to': 'Счет 39745660563456619397', 
+'description': 'Перевод организации'}
+...
+...
+...
+{'id': '4699552', 'state': 'EXECUTED', 'date': '2022-03-23T08:29:37Z', 
+'amount': '23423', 'currency_name': 'Peso', 'currency_code': 'PHP', 
+'from': 'Discover 7269000803370165', 'to': 'American Express 1963030970727681', 
+'description': 'Перевод с карты на карту'}]
+
 
 ## Тестирование модулей
 тесты находятся в дериктории tests
