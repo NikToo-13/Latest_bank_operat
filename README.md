@@ -327,10 +327,10 @@ print(read_csv('C:data\transactions.csv'))
  {'id': '650703', 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 
 'amount': '16210', 'currency_name': 'Sol', 'currency_code': 'PEN', 
 'from': 'Счет 58803664561298323391', 'to': 'Счет 39745660563456619397', 
-'description': 'Перевод организации'}
-...
-...
-...
+'description': 'Перевод организации'},
+...,
+-N-,
+...,
 {'id': '4699552', 'state': 'EXECUTED', 'date': '2022-03-23T08:29:37Z', 
 'amount': '23423', 'currency_name': 'Peso', 'currency_code': 'PHP', 
 'from': 'Discover 7269000803370165', 'to': 'American Express 1963030970727681', 
@@ -352,10 +352,10 @@ print(read_excel('C:data\transactions_excel.xlsx'))
  {'id': '650703', 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 
 'amount': '16210', 'currency_name': 'Sol', 'currency_code': 'PEN', 
 'from': 'Счет 58803664561298323391', 'to': 'Счет 39745660563456619397', 
-'description': 'Перевод организации'}
-...
-...
-...
+'description': 'Перевод организации'},
+...,
+-N-,
+...,
 {'id': '4699552', 'state': 'EXECUTED', 'date': '2022-03-23T08:29:37Z', 
 'amount': '23423', 'currency_name': 'Peso', 'currency_code': 'PHP', 
 'from': 'Discover 7269000803370165', 'to': 'American Express 1963030970727681', 
