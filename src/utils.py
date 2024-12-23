@@ -16,11 +16,12 @@ def json_to_dictionary(path_file: str) -> dict:
     """которая принимает на вход путь до JSON-файла
     и возвращает список словарей с данными о финансовых транзакциях."""
     try:
-        logger.info(f"Принимаем путь к файлу: {path_file}")
+        legend_s = f' Функция: json_to_dictionary -> '
+        logger.info(f"{legend_s}Принимаем путь к файлу: {path_file}")
         with open(path_file, "r", encoding="utf-8") as file:
             date_file = json.load(file)
-        logger.info(f"{path_file} - прочтен успешно")
+        logger.info(f"{legend_s}{path_file} - прочтен успешно")
         return date_file
     except Exception as er:
-        logger.error(f"Ошибка: {er}")
+        logger.error(f"{legend_s}Ошибка: {er}")
         return []
