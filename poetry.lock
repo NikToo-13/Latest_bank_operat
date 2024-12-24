@@ -346,6 +346,16 @@ files = [
 ]
 
 [[package]]
+name = "mock-open"
+version = "1.4.0"
+description = "A better mock for file I/O"
+optional = false
+python-versions = "*"
+files = [
+    {file = "mock-open-1.4.0.tar.gz", hash = "sha256:c3ecb6b8c32a5899a4f5bf4495083b598b520c698bba00e1ce2ace6e9c239100"},
+]
+
+[[package]]
 name = "mypy"
 version = "1.13.0"
 description = "Optional static typing for Python"
@@ -794,4 +804,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "cbb88823dd19825d3690954cffa43c7acf4dc92cdca23d6c09d5ea765fc0170c"
+content-hash = "0fdab154a2359c3cc567d0e042cdc1cc904e0abbcfd5df6b73961ec018ee717e"

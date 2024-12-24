@@ -1,5 +1,6 @@
 import os
 
+import pandas as pd
 import pytest
 
 from project_sys import PATH_HOME
@@ -133,3 +134,12 @@ def fix_json_to_dictionary():
 @pytest.fixture
 def fix_json_to_dictionary1():
     return os.path.join(PATH_HOME, 'data', 'operations_0.json')
+
+@pytest.fixture
+def exit_answer():
+    return {'id,state,date': '441945886,EXECUTED,2019-08-26T10:50:58.294041'}
+
+@pytest.fixture
+def fix_data_exels():
+    path_file = os.path.join(PATH_HOME, 'data', 'transactions_excel_test.xlsx')
+    return pd.read_excel(path_file)
