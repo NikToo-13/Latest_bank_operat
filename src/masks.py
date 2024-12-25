@@ -15,18 +15,18 @@ def get_mask_card_number(card_number: int) -> str:
     """Функция принимает на вход номер карты и возвращает ее маску.
     В случаи ошибки возвращает ошибку"""
 
-    legend_s = ' Функция: get_mask_card_number -> '
+    legend_s = " Функция: get_mask_card_number -> "
     card_number1 = str(card_number)
-    logger.info(f'{legend_s}Принимаем номер карты: {card_number1}')
+    logger.info(f"{legend_s}Принимаем номер карты: {card_number1}")
     try:
         if len(card_number1) == 16:
             card_mask = card_number1[0:4] + " " + card_number1[4:6] + "** **** " + card_number1[12:16]
-            logger.info(f'{legend_s}Создаем маску для номера карты: {card_mask}')
+            logger.info(f"{legend_s}Создаем маску для номера карты: {card_mask}")
         else:
-            raise Exception(f'{legend_s}Проверти, правильность ввода номера карты!')
+            raise Exception(f"{legend_s}Проверти, правильность ввода номера карты!")
         return card_mask
     except Exception as er:
-        logger.warning(f'{legend_s}Ошибка: {er}')
+        logger.warning(f"{legend_s}Ошибка: {er}")
         return str(er)
 
 
@@ -34,7 +34,7 @@ def get_mask_account(account: int) -> str:
     """Функция принимает на вход номер счета и возвращает его маску.
     В случаи ошибки возвращает ошибку"""
 
-    legend_s = ' Функция: get_mask_account -> '
+    legend_s = " Функция: get_mask_account -> "
     try:
         account1 = str(account)
         logger.info(f"{legend_s}Принимаем номер счета: {account1}")

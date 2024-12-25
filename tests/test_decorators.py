@@ -1,10 +1,4 @@
-import pytest
-
 from src.decorators import log
-
-# def division_numbers(a, b):
-#    """Функция для отработки ошибок декоратора log"""
-#    return a / b
 
 
 def test_decorators_log(capsys):

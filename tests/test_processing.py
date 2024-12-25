@@ -1,6 +1,6 @@
-from src.processing import filter_by_state, sort_by_date
-
 import pytest
+
+from src.processing import filter_by_state, sort_by_date
 
 # Тест проверки функций filter_by_state, sort_by_date модуля processing.py
 

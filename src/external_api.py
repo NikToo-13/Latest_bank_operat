@@ -1,4 +1,5 @@
 import os
+
 import requests
 from dotenv import load_dotenv
 
@@ -13,10 +14,10 @@ def operation_converter(transaction: list) -> float:
         payload = {}
         headers = {"apikey": keys}
         transaction_currency = transaction["currency"]["code"]
-        if transaction_currency != 'RUB':
+        if transaction_currency != "RUB":
             to = "RUB"
             froms = transaction_currency
-            amount = transaction['amount']
+            amount = transaction["amount"]
             url = f"https://api.apilayer.com/exchangerates_data/convert?to={to}&from={froms}&amount={amount}"
             response = requests.request("GET", url, headers=headers, data=payload)
             status_code = response.status_code
@@ -27,7 +28,7 @@ def operation_converter(transaction: list) -> float:
                 print(response.reason)
                 return -1
         else:
-            summ = transaction['amount']
+            summ = transaction["amount"]
         return summ
     except Exception:
         return -1

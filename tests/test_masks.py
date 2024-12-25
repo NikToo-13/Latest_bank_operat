@@ -1,7 +1,6 @@
-from src.masks import get_mask_card_number, get_mask_account
-
 import pytest
 
+from src.masks import get_mask_account, get_mask_card_number
 
 # Тест проверки функций get_mask_card_number и get_mask_account модуля masks.py при условии:
 # что входящий параметр не может быть не числовым(начальное условие задания)
@@ -19,16 +18,13 @@ def test_f_get_mask_card_number(fix_get_mask_card_number):
     [
         ("7000792289606361", "7000 79** **** 6361"),
         ("7020652245672183", "7020 65** **** 2183"),
-        ("700079228960636341", "Проверти, правильность ввода номера карты!"),
-        ("70008960636341", "Проверти, правильность ввода номера карты!"),
-        ("", "Проверти, правильность ввода номера карты!"),
+        ("700079228960636341", " Функция: get_mask_card_number -> Проверти, правильность ввода номера карты!"),
+        ("70008960636341", " Функция: get_mask_card_number -> Проверти, правильность ввода номера карты!"),
+        ("", " Функция: get_mask_card_number -> Проверти, правильность ввода номера карты!"),
     ],
 )
 def test_get_mask_card_number(value, expected):
-    try:
-        assert get_mask_card_number(value) == expected
-    except:
-        print("ERROR")
+    assert get_mask_card_number(value) == expected
 
 
 # get_mask_account проверка функции

@@ -6,9 +6,9 @@ import pytest
 from project_sys import PATH_HOME
 
 
-# Фикстуры для test_masks.py
 @pytest.fixture
 def fix_get_mask_card_number():
+    """Фикстуры для test_masks.py"""
     return "7000792289606361"
 
 
@@ -17,25 +17,27 @@ def fix_get_mask_account():
     return "73654108430135874305"
 
 
-# Фикстуры для test_widget.py
 @pytest.fixture
 def fix_mask_account_card():
+    """Фикстуры для test_widget.py"""
     return "Maestro 1596837868705199"
 
 
 @pytest.fixture
 def fix_mask_account_card_c():
+    """Фикстуры для test_widget.py"""
     return "Счет 35383033474447895560"
 
 
 @pytest.fixture
 def fix_get_date():
+    """Фикстуры для test_widget.py"""
     return "2024-03-11T02:26:18.671407"
 
 
-# Фикстуры для test_processing.py
 @pytest.fixture
 def fix_filter_by_state():
+    """Фикстуры для test_processing.py"""
     return [
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
         {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
@@ -125,21 +127,27 @@ def fix_transactions():
             "to": "Счет 14211924144426031657",
         },
     ]
-# Общая работа (когда верное значение на выходе)
+
+
 @pytest.fixture
 def fix_json_to_dictionary():
-    return os.path.join(PATH_HOME, 'data', 'operations.json')
+    """Общая работа (когда верное значение на выходе)"""
+    return os.path.join(PATH_HOME, "data", "operations.json")
 
-# Фикстуры для test_utils.py неверный путь
+
 @pytest.fixture
 def fix_json_to_dictionary1():
-    return os.path.join(PATH_HOME, 'data', 'operations_0.json')
+    """Фикстуры для test_utils.py неверный путь"""
+    return os.path.join(PATH_HOME, "data", "operations_0.json")
+
 
 @pytest.fixture
 def exit_answer():
-    return {'id,state,date': '441945886,EXECUTED,2019-08-26T10:50:58.294041'}
+    return {"id,state,date": "441945886,EXECUTED,2019-08-26T10:50:58.294041"}
+
 
 @pytest.fixture
 def fix_data_exels():
-    path_file = os.path.join(PATH_HOME, 'data', 'transactions_excel_test.xlsx')
+    """Фикстура для подмены Exel данных файла"""
+    path_file = os.path.join(PATH_HOME, "data", "transactions_excel_test.xlsx")
     return pd.read_excel(path_file)
