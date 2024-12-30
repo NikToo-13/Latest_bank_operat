@@ -1,7 +1,6 @@
 import pytest
-from mypy.nodes import TryStmt
 
-from src.generators import transaction_descriptions, filter_by_currency, card_number_generator
+from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 date_transactions = [
     {

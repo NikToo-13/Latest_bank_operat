@@ -1,6 +1,6 @@
-from src.widget import mask_account_card, get_date
-
 import pytest
+
+from src.widget import get_date, mask_account_card
 
 # Тест проверки функций mask_account_card, get_date модуля widget.py
 
