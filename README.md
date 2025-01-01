@@ -296,6 +296,7 @@ print(dicts)
 {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364', 'operationAmount': {'amount': '8221.37', 'currency': {'name': 'USD', 'code': 'USD'}}, 'description': 'Перевод организации', 'from': 'MasterCard 7158300734726758', 'to': 'Счет 35383033474447895560'},] 
 
 ### Функция convert_date_to_general(list) ->list
+Функция приводит формат данных с файлов типа EXEL и CSV  к формату полученому из JSON файла.
 
 *пример*
 ```shell
@@ -305,12 +306,34 @@ print(dicts)
 *результат* ->
 [{'id': '650703', 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 'operationAmount': {'amount': '16210', 'currency': {'name': 'Sol', 'code': 'PEN'}}, 'description': 'Перевод организации', 'from': 'Счет 58803664561298323391', 'to': 'Счет 39745660563456619397'}]
 
+### Функция transaction_search(list, search: str) -> list:
+Функция принимать список словарей с данными и строку поиска, а возвращать список словарей, у которых в описании есть данная строка.
+
+*пример*
+```shell
+list = [{'id': '650703', 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 'operationAmount': {'amount': '16210', 'currency': {'name': 'Sol', 'code': 'PEN'}}, 'description': 'Перевод организации', 'from': 'Счет 58803664561298323391', 'to': 'Счет 39745660563456619397'}, {'id': '3598919', 'state': 'EXECUTED', 'date': '2020-12-06T23:00:58Z', 'operationAmount': {'amount': '29740', 'currency': {'name': 'Peso', 'code': 'COP'}}, 'description': 'Перевод с карты на карту', 'from': 'Discover 3172601889670065', 'to': 'Discover 0720428384694643'}]
+print(transaction_search(list, 'Перевод организации'))
+```
+*результат* ->
+[{'id': '650703', 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 'operationAmount': {'amount': '16210', 'currency': {'name': 'Sol', 'code': 'PEN'}}, 'description': 'Перевод организации', 'from': 'Счет 58803664561298323391', 'to': 'Счет 39745660563456619397'}]
+
+### Функция def counting_transactions_category(list, list) -> dict
+Функция, которая принимает список словарей с данными о банковских операциях и список категорий операций, а возвращать словарь: ключ — это названия категорий, а значения — это количество операций в каждой категории
+
+*пример*
+```shell
+list = [{'id': '650703', 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 'operationAmount': {'amount': '16210', 'currency': {'name': 'Sol', 'code': 'PEN'}}, 'description': 'Перевод организации', 'from': 'Счет 58803664561298323391', 'to': 'Счет 39745660563456619397'}, {'id': '3598919', 'state': 'EXECUTED', 'date': '2020-12-06T23:00:58Z', 'operationAmount': {'amount': '29740', 'currency': {'name': 'Peso', 'code': 'COP'}}, 'description': 'Перевод с карты на карту', 'from': 'Discover 3172601889670065', 'to': 'Discover 0720428384694643'}]
+category = ('Перевод организации', 'Перевод с карты на карту','ereee')
+print(counting_transactions_category(list, category))
+```
+*результат* ->
+{'Перевод организации': 1, 'Перевод с карты на карту': 1, 'ereee': 0}
 
 
 ## Модуль: external_api
 
 ### Функция operation_converter(dict) -> float 
-функцию, которая принимает на вход транзакцию 
+Функцию, которая принимает на вход транзакцию 
 и возвращает сумму транзакции в рублях, Если транзакция была в USD или EUR
 , происходит обращение к внешнему API для получения текущего курса валют 
 и конвертации суммы операции в рубли. В случии ошибки возвращает -1 и сообщение об ошибки

@@ -1,5 +1,7 @@
 import json
 import logging
+import re
+from re import match
 
 from project_sys import PATH_HOME
 
@@ -27,10 +29,11 @@ def json_to_dictionary(path_file: str) -> dict:
         return []
 
 def convert_date_to_general(dicts: list) ->list:
-    """Функция приводит формат данных с файлов типа EXEL и CSV  к формату полученому из JSON файла."""
+    """Функция приводит формат данных
+        с файлов типа EXEL и CSV  к формату полученому из JSON файла."""
 
     try:
-        legend_s = f' Функция: convert_date_to_general -> '
+        legend_s = ' Функция: convert_date_to_general -> '
         list_transaction = []
         logger.info(f"{legend_s}преабразуем файл под наши функции")
         for row in dicts:
@@ -52,6 +55,48 @@ def convert_date_to_general(dicts: list) ->list:
             list_transaction.append(dict_transaction)
         logger.info(f"{legend_s}Работа со списком успешно завершена!")
         return list_transaction
+    except Exception as er:
+        logger.error(f"{legend_s}Ошибка: {er}")
+        return []
+
+def transaction_search(list_dict: list, searchs: str) -> list:
+    """Функция принимать список словарей с данными и строку поиска,
+        а возвращать список словарей, у которых в описании есть данная строка."""
+
+    try:
+        legend_s = ' Функция: transaction_search -> '
+        list_search = []
+        logger.info(f"{legend_s}Начинаем фильтрацию по запросу пользователя в описании транзакций.")
+        for list_s in list_dict:
+            if re.findall(searchs, str(list_s["description"])):
+                list_search.append(list_s)
+        if list_search != []:
+            logger.info(f"{legend_s}Найдены совпадения пользовательского запроса.")
+            return list_search
+        else:
+            logger.info(f"{legend_s}Нет совпадения пользовательского запроса.")
+            return []
+    except Exception as er:
+        logger.error(f"{legend_s}Ошибка: {er}")
+        return []
+
+
+def counting_transactions_category(list_transactions: list, listof_categories: list) -> dict:
+    """Функция, которая принимает список словарей с данными о банковских операциях и список категорий операций,
+        а возвращать словарь: ключ — это названия категорий, а значения — это количество операций в каждой категории"""
+
+    try:
+        legend_s = ' Функция: counting_transactions_category -> '
+        logger.info(f"{legend_s}Начинаем подсчет операций в каждой категории.")
+        categories_counter = {}
+        for category in listof_categories:
+            lists_search = transaction_search(list_transactions, category)
+            if lists_search != []:
+                categories_counter[category] = len(lists_search)
+            else:
+                categories_counter[category] = 0
+        logger.info(f"{legend_s}Подсчет успешно закончен.")
+        return categories_counter
     except Exception as er:
         logger.error(f"{legend_s}Ошибка: {er}")
         return []
