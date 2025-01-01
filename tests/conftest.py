@@ -151,3 +151,13 @@ def fix_data_exels():
     """Фикстура для подмены Exel данных файла"""
     path_file = os.path.join(PATH_HOME, "data", "transactions_excel_test.xlsx")
     return pd.read_excel(path_file)
+
+
+@pytest.fixture
+def fix_convert_date_to_general():
+    """Фикстура для проверки функции convert_date_to_general"""
+    return [
+        {'id': 650703, 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 'amount': 16210, 'currency_name': 'Sol',
+         'currency_code': 'PEN', 'from': 'Счет 58803664561298323391', 'to': 'Счет 39745660563456619397',
+         'description': 'Перевод организации'}
+    ]

@@ -25,3 +25,33 @@ def json_to_dictionary(path_file: str) -> dict:
     except Exception as er:
         logger.error(f"{legend_s}Ошибка: {er}")
         return []
+
+def convert_date_to_general(dicts: list) ->list:
+    """Функция приводит формат данных с файлов типа EXEL и CSV  к формату полученому из JSON файла."""
+
+    try:
+        legend_s = f' Функция: convert_date_to_general -> '
+        list_transaction = []
+        logger.info(f"{legend_s}преабразуем файл под наши функции")
+        for row in dicts:
+            dict_transaction = {
+                "id": str(row["id"]),
+                "state": row["state"],
+                "date": row["date"],
+                "operationAmount": {
+                    "amount": str(row["amount"]),
+                    "currency": {
+                        "name": row["currency_name"],
+                        "code": row["currency_code"]
+                    }
+                },
+                "description": row["description"],
+                "from": row["from"],
+                "to": row["to"]
+            }
+            list_transaction.append(dict_transaction)
+        logger.info(f"{legend_s}Работа со списком успешно завершена!")
+        return list_transaction
+    except Exception as er:
+        logger.error(f"{legend_s}Ошибка: {er}")
+        return []

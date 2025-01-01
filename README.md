@@ -295,6 +295,18 @@ print(dicts)
 [{'id': 441945886, 'state': 'EXECUTED', 'date': '2019-08-26T10:50:58.294041', 'operationAmount': {'amount': '31957.58', 'currency': {'name': 'руб.', 'code': 'RUB'}}, 'description': 'Перевод организации', 'from': 'Maestro 1596837868705199', 'to': 'Счет 64686473678894779589'}, 
 {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364', 'operationAmount': {'amount': '8221.37', 'currency': {'name': 'USD', 'code': 'USD'}}, 'description': 'Перевод организации', 'from': 'MasterCard 7158300734726758', 'to': 'Счет 35383033474447895560'},] 
 
+### Функция convert_date_to_general(list) ->list
+
+*пример*
+```shell
+dicts = convert_date_to_general([{'id': 650703, 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 'amount': 16210, 'currency_name': 'Sol', 'currency_code': 'PEN', 'from': 'Счет 58803664561298323391', 'to': 'Счет 39745660563456619397', 'description': 'Перевод организации'}])
+print(dicts)
+```
+*результат* ->
+[{'id': '650703', 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 'operationAmount': {'amount': '16210', 'currency': {'name': 'Sol', 'code': 'PEN'}}, 'description': 'Перевод организации', 'from': 'Счет 58803664561298323391', 'to': 'Счет 39745660563456619397'}]
+
+
+
 ## Модуль: external_api
 
 ### Функция operation_converter(dict) -> float 
@@ -449,6 +461,11 @@ index.html
 ### Функция read_excels:
 1. Тест, проверяющий общюю работу.
 2. Тест проверяющий ошибку в пути.
+
+### Функция convert_date_to_general:
+1. Тест, проверяющий общюю работу.
+2. Тест проверяющий пустой список.
+
 ## Документация:
 
 ## Лицензия: 
