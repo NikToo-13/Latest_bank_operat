@@ -10,10 +10,10 @@ def mask_account_card(account_card: str) -> str:
         # определяем card_attributes это номер карты или счет, и выполняем соответствующею логику
         if len(card_attributes[-1]) == 16:
             card_attribut = " ".join(card_attributes[0:-1])
-            card_attributs = card_attribut + " " + get_mask_card_number(int(card_attributes[-1]))
+            card_attributs = card_attribut + " " + get_mask_card_number(str(card_attributes[-1]))
         elif len(card_attributes[-1]) == 20:
             card_attribut = " ".join(card_attributes[0:-1])
-            card_attributs = card_attribut + " " + get_mask_account(int(card_attributes[-1]))
+            card_attributs = card_attribut + " " + get_mask_account(str(card_attributes[-1]))
         else:
             card_attributs = "Проверти, правильность ввода данных!"
         return card_attributs
@@ -24,7 +24,7 @@ def get_date(date_line: str) -> str:
     """Возвращает из строки дату в формате: День.Месяц.Год"""
 
     try:
-        if len(date_line) == 26:
+        if len(date_line) == 26 or len(date_line) == 20:
             if date_line.find("T") == 10:
                 if date_line[4] == "-" and date_line[7] == "-":
                     date_e = date_line[0 : date_line.find("T")]

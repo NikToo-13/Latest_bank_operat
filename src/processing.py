@@ -7,8 +7,9 @@ def filter_by_state(list_dictionary: list, state_key: str = "EXECUTED") -> Any:
     new_dictionary = []
     if state_key != "":
         for dictionary in list_dictionary:
-            if dictionary["state"] == state_key:
-                new_dictionary.append(dictionary)
+            if "state" in dictionary:
+                if dictionary["state"] == state_key:
+                    new_dictionary.append(dictionary)
         if new_dictionary == []:
             return "Отсутствуют записи с данным статусом"
         else:

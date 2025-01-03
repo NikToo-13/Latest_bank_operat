@@ -1,7 +1,6 @@
 import json
 import logging
 import re
-from re import match
 
 from project_sys import PATH_HOME
 
@@ -68,7 +67,8 @@ def transaction_search(list_dict: list, searchs: str) -> list:
         list_search = []
         logger.info(f"{legend_s}Начинаем фильтрацию по запросу пользователя в описании транзакций.")
         for list_s in list_dict:
-            if re.findall(searchs, str(list_s["description"])):
+
+            if re.findall(searchs, str(list_s["description"]), re.I):
                 list_search.append(list_s)
         if list_search != []:
             logger.info(f"{legend_s}Найдены совпадения пользовательского запроса.")
