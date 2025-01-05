@@ -1,7 +1,7 @@
 from typing import Any
 
 
-def filter_by_state(list_dictionary: list, state_key: str = "EXECUTED") -> Any:
+def filter_by_state(list_dictionary: list, state_key: str = "EXECUTED") -> list | str:
     """Функция возвращает новый список словарей, содержащий только те словари,
     у которых ключ state соответствует указанному значению."""
     new_dictionary = []

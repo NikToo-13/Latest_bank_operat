@@ -1,7 +1,7 @@
 from typing import Any, Generator
 
 
-def filter_by_currency(transaction_list: list, currency: str = "USD") -> Any:
+def filter_by_currency(transaction_list: list, currency: str = "USD") -> Generator | str:
     """Функция возвращаeт итератор, который поочередно выдает транзакции,
     где валюта операции соответствует заданной, по умолчанию USD"""
     x = 0
@@ -15,7 +15,7 @@ def filter_by_currency(transaction_list: list, currency: str = "USD") -> Any:
                 yield operation
             x += 1
     except Exception as er:
-        return er
+        return str(er)
 
 
 def transaction_descriptions(transaction_list: list) -> Any:
@@ -33,7 +33,7 @@ def transaction_descriptions(transaction_list: list) -> Any:
         return er
 
 
-def card_number_generator(start: int = 1, stop: int = 10) -> Generator:
+def card_number_generator(start: int = 1, stop: int = 10) -> Generator | str:
     """Генератор, который выдает номера банковских карт
     в формате XXXX XXXX XXXX XXXX, где X — цифра номера карты.
       Генератор может сгенерировать номера карт в заданном диапазоне
