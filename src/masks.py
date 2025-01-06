@@ -11,7 +11,7 @@ logger.addHandler(file_handler)
 logger.setLevel(logging.DEBUG)
 
 
-def get_mask_card_number(card_number: int) -> str:
+def get_mask_card_number(card_number: str) -> str:
     """Функция принимает на вход номер карты и возвращает ее маску.
     В случаи ошибки возвращает ошибку"""
 
@@ -30,7 +30,7 @@ def get_mask_card_number(card_number: int) -> str:
         return str(er)
 
 
-def get_mask_account(account: int) -> str:
+def get_mask_account(account: str) -> str:
     """Функция принимает на вход номер счета и возвращает его маску.
     В случаи ошибки возвращает ошибку"""
 
