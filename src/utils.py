@@ -98,7 +98,7 @@ def counting_transactions_category(list_transactions: list, listof_categories: l
                 lists_search.append(lines["description"])
         categories_counter = Counter(lists_search)
         logger.info(f"{legend_s}Подсчет успешно закончен.")
-        return categories_counter
+        return dict(categories_counter)
     except Exception as er:
         logger.error(f"{legend_s}Ошибка: {er}")
         return {}
