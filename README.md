@@ -5,12 +5,14 @@
 
 1. Клонируйте репозиторий:
 ```shell
-https://gist.github.com/bzvyagintsev/0c4adf4403d4261808d75f9576c814c2
+https://github.com/NikToo-13/Latest_bank_operat
 ```
+
 2. Установка зависимостей:
 ```shell
 pip install -r requirements.txt
 ```
+
 ## Использование:
 Функции вызываются по мере необходимости из пакетов processing и widget лежащих в папки src.
 
